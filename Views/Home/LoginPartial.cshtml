@@ -1,0 +1,19 @@
+@model LoginUser
+<form action="/login" method="POST">
+    <div class="form-group">
+        <label asp-for="loginEmail"></label>
+        <span style="color: red;" asp-validation-for="loginEmail"></span>
+        <input class="form-control" type="email" asp-for="loginEmail">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="loginPassword"></label>
+        <span style="color: red;" asp-validation-for="loginPassword"></span>
+        <input class="form-control" type="password" asp-for="loginPassword">
+    </div>
+    <input type="submit" value="Login">
+</form>
+
+// Refactor: avoid using inline styling, use bootstrap classes instead
+// Refactor: use tag helpers -> instead of form action="/login", use asp-action="login" 
+// Refactor: remove types from input (i.e. type="email" & type="password") and have the models handle the types instead 
